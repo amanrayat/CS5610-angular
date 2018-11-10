@@ -1,3 +1,12 @@
-<p>
-  topic-pill works!
-</p>
+<div class="container my-4">
+  <h1>Topic</h1>
+  <ul class="nav nav-tabs">
+    <li class="nav-item mx-4" *ngFor="let topic of topics">
+      <a routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lessonId}}/topic"> {{topic.title}}</a>
+      <!--<a routerLink="/course/{{courseId}}/module/{{module.id}}">{{topic.title}}</a>-->
+    </li>
+  </ul>
+</div>
+  <!--<div class="col-9 bg-primary">-->
+    <!--<app-lesson-tab></app-lesson-tab>-->
+  <!--</div>-->

@@ -1,3 +1,19 @@
-<p>
-  module-list works!
-</p>
+<h1>Modules</h1>
+<div class="row">
+  <div class="col-3">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let module of modules">
+        <a routerLink="/course/{{courseId}}/module/{{module.id}}">{{module.title}}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-9 ">
+    <div class="row">
+    <app-lesson-tab></app-lesson-tab>
+    </div>
+    <div class="row">
+      <app-topic-pill></app-topic-pill>
+    </div>
+  </div>
+
+</div>

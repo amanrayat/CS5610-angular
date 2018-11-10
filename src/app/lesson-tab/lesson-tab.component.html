@@ -1,3 +1,5 @@
-<p>
-  lesson-tab works!
-</p>
+<ul class="nav">
+  <li class="nav-item mx-3" *ngFor="let lesson of lessons">
+    <a routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lesson.id}}">{{lesson.title}}</a>
+  </li>
+</ul>

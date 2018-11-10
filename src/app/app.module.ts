@@ -9,6 +9,10 @@ import { TopicPillComponent } from './topic-pill/topic-pill.component';
 import { WidgetListComponent } from './widget-list/widget-list.component';
 import {CourseServiceClient} from './services/course.service.client';
 import { routing} from './app.routing';
+import {ModuleServiceClient} from './services/module.service.client';
+import {LessonServiceClient} from './services/lesson.service.client';
+import {TopicServiceClient} from './services/topic.sevice.client';
+import {WidgetServiceClient} from './services/widget.service.client';
 
 @NgModule({
   declarations: [
@@ -24,10 +28,10 @@ import { routing} from './app.routing';
     routing
   ],
   providers: [CourseServiceClient ,
-              ModuleListComponent ,
-              LessonTabComponent ,
-              TopicPillComponent ,
-              WidgetListComponent],
+              ModuleServiceClient ,
+              LessonServiceClient ,
+              TopicServiceClient ,
+              WidgetServiceClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
