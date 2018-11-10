@@ -7,6 +7,8 @@ import { ModuleListComponent } from './module-list/module-list.component';
 import { LessonTabComponent } from './lesson-tab/lesson-tab.component';
 import { TopicPillComponent } from './topic-pill/topic-pill.component';
 import { WidgetListComponent } from './widget-list/widget-list.component';
+import {CourseServiceClient} from './services/course.service.client';
+import { routing} from './app.routing';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,14 @@ import { WidgetListComponent } from './widget-list/widget-list.component';
     WidgetListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    routing
   ],
-  providers: [],
+  providers: [CourseServiceClient ,
+              ModuleListComponent ,
+              LessonTabComponent ,
+              TopicPillComponent ,
+              WidgetListComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
