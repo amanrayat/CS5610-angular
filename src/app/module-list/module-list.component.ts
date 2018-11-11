@@ -25,7 +25,8 @@ export class ModuleListComponent implements OnInit {
   }
 
   updateModule(courseId){
-    this.moduleService.findModuleForCourse(courseId).then((response:any)=>this.modules = response)
+    this.moduleService.findModuleForCourse(courseId).then((response:any)=>this.modules = [...response])
+
   }
 
 }

@@ -1,12 +1,16 @@
-<h1 style="text-align: center">Course List</h1>
+<h1 style="text-align: center" class="container-fluid my-4">Course List</h1>
 <div class="container mt-5">
 <div class="card-deck">
   <div *ngFor="let course of courses">
-    <div class="card m-3" style="width: 18rem;" >
-      <div class="card-body">
-        <h5 class="card-title text-primary">{{course.title}}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <p class="card-text"><em>Taught by :</em> {{course.owner}}</p>
+    <div class="card m-3 card-height grow" style="width: 18rem">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title text-secondary">{{course.title}}</h5>
+        <hr>
+        <p>The course contains</p>
+        <ul>
+          <li class="card-text" *ngFor="let module of course.module"> {{module.title}}</li>
+        </ul>
+        <p class="card-text mt-auto"><em>Taught by :</em> {{course.owner}}</p>
         <button (click)="details(course.id)" class="btn btn-primary">More Details</button>
       </div>
     </div>

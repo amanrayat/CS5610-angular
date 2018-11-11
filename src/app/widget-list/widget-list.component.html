@@ -1,3 +1,25 @@
-<p>
-  widget-list works!
-</p>
+<div class="my-4" *ngFor="let widget of widgets">
+  <div [ngSwitch]="widget.widgetType">
+    <div *ngSwitchCase="'HEADING'">
+      <div [ngSwitch]="widget.size">
+        <div *ngSwitchCase="'1'"><h1>{{widget.text}}</h1></div>
+        <div *ngSwitchCase="'2'"><h2>{{widget.text}}</h2></div>
+        <div *ngSwitchCase="'3'"><h3>{{widget.text}}</h3></div>
+        <div *ngSwitchCase="'4'"><h4>{{widget.text}}</h4></div>
+      </div>
+    </div>
+    <div *ngSwitchCase="'LIST'">
+      <div *ngIf="!widget.ordered"><li>{{widget.items}}</li></div>
+      <!--<div *ngIf="!widget.ordered"><li>{{widget.items}}</li></div>-->
+    </div>
+    <div *ngSwitchCase="'PARAGRAPH'">
+      <p>{{widget.text}}</p>
+    </div>
+    <div *ngSwitchCase="'IMAGE'">
+      <img src="{{widget.src}}" alt="">
+    </div>
+    <div *ngSwitchCase="'LINK'">
+      <a href="{{widget.src}}">{{widget.text}}</a>
+    </div>
+  </div>
+</div>

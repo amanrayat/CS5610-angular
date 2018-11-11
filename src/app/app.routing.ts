@@ -8,6 +8,7 @@ const appRoutes : Routes = [
   { path : 'course/:courseId' , component : ModuleListComponent },
   { path: 'course/:courseId/module/:moduleId', component: ModuleListComponent },
   { path: 'course/:courseId/module/:moduleId/lesson/:lessonId', component: ModuleListComponent },
+  { path: 'course/:courseId/module/:moduleId/lesson/:lessonId/topic/:topicId', component: ModuleListComponent },
 
 ];
 export const  routing = RouterModule.forRoot(appRoutes);

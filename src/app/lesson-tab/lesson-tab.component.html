@@ -1,5 +1,10 @@
 <ul class="nav">
-  <li class="nav-item mx-3" *ngFor="let lesson of lessons">
-    <a routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lesson.id}}">{{lesson.title}}</a>
+  <li class="nav-item mx-3">Lessons : </li>
+  <li class="nav-item mx-3 grow"
+      [ngClass]="{'selected': lesson.id == lessonId}"
+      *ngFor="let lesson of lessons">
+    <a class="text-secondary "
+       routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lesson.id}}">{{lesson.title}}</a>
   </li>
+  <hr>
 </ul>

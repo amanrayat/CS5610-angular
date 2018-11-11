@@ -13,6 +13,7 @@ export class LessonTabComponent implements OnInit {
 
   moduleId;
   courseId;
+  lessonId;
   lessons = [];
   ngOnInit() {
     this.activatedRoute.params.subscribe(params=>
@@ -22,10 +23,13 @@ export class LessonTabComponent implements OnInit {
   updateParams(params){
     this.moduleId = params ['moduleId'];
     this.courseId = params ['courseId'];
+    this.lessonId = params ['lessonId'];
     this.updateTopic(this.moduleId);
   }
   updateTopic(moduleId) {
-    this.lessonService.findLessonByModule(moduleId).then((response : any) => this.lessons = response)
+    if(moduleId){
+      this.lessonService.findLessonByModule(moduleId).then((response : any) => this.lessons = [...response])
+    }
   }
 
 

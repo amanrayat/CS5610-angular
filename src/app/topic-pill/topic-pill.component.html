@@ -1,12 +1,13 @@
-<div class="container my-4">
+<div class="container-fluid my-2" style="width: 100%">
   <h1>Topic</h1>
-  <ul class="nav nav-tabs">
-    <li class="nav-item mx-4" *ngFor="let topic of topics">
-      <a routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lessonId}}/topic"> {{topic.title}}</a>
-      <!--<a routerLink="/course/{{courseId}}/module/{{module.id}}">{{topic.title}}</a>-->
+  <ul class="nav nav-tabs my-3">
+    <li class="nav-item mx-4 grow" *ngFor="let topic of topics">
+      <a class="text-secondary"
+         [ngClass]="{'selected': topic.id == topicId}"
+         routerLink="/course/{{courseId}}/module/{{moduleId}}/lesson/{{lessonId}}/topic/{{topic.id}}"> {{topic.title}}</a>
     </li>
   </ul>
 </div>
-  <!--<div class="col-9 bg-primary">-->
-    <!--<app-lesson-tab></app-lesson-tab>-->
-  <!--</div>-->
+<div class="my-5">
+  <app-widget-list></app-widget-list>
+</div>

@@ -8,7 +8,10 @@ import {TopicServiceClient} from '../services/topic.sevice.client';
   styleUrls: ['./topic-pill.component.css']
 })
 export class TopicPillComponent implements OnInit {
+  courseId;
+  moduleId;
   lessonId;
+  topicId;
   topics = [];
 
   constructor(private activatedRoute : ActivatedRoute , private topicService : TopicServiceClient) { }
@@ -19,13 +22,19 @@ export class TopicPillComponent implements OnInit {
     )
   }
   updateParams(params){
-    this.lessonId = params ['lessonId']
+    this.lessonId = params ['lessonId'];
+    this.courseId = params ['courseId'];
+    this.moduleId = params ['moduleId'];
+    this.topicId = params ['topicId'];
     this.updateTopic(this.lessonId);
   }
   updateTopic (lessonId) {
-    this.topicService.findTopicForLesson(lessonId).then((response : any) =>
-      this.topics = response
-    )
+    if(lessonId){
+      this.topicService.findTopicForLesson(lessonId).then((response : any) =>
+        this.topics = [...response]
+      )
+    }
+
   }
 
 }
