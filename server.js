@@ -5,6 +5,6 @@ const app = express();
 app.use(express.static('./dist/simple-blog-app-angular'));
 
 app.get('/*', function (req, res) {
-  res.sendFile(path.join('./dist/simple-blog-app-angular/index.html'));
+  res.sendFile(path.join('./dist/CS5610-angular/index.html'));
 });
 app.listen(process.env.PORT || 8080);
