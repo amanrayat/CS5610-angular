@@ -1,16 +1,17 @@
 import {Injectable} from '@angular/core';
+let URL = "https://guarded-lake-67462.herokuapp.com"
 
 @Injectable()
 export class CourseServiceClient {
   findAllCourses() {
-    return fetch('http://localhost:8080/api/courses'
+    return fetch(URL +'/api/courses'
       , {credentials : 'include'})
       .then(response => {
       return response.json();
     });
   }
   findCourseById(courseId){
-    return fetch('http://localhost:8080/api/course/'+courseId
+    return fetch(URL +'/api/course/'+courseId
       , {credentials : 'include'})
       .then(response => {
       return response.json();
